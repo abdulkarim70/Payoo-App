@@ -22,6 +22,15 @@ if(NewBalance<0){
  if(pin==7070){
     alert('Login successful')
     setBalance(NewBalance)
+    const history=document.getElementById('history-container')
+    // new div create korbo
+    const newHistory=document.createElement('div')
+    // new div inner html add korbo
+    newHistory.innerHTML=`<div class="transaction-card py-5 bg-base-100">
+Cashout ${cashOutAmount} Successful to ${cashOutNumber},  at ${new Date()}
+  </div>`
+    // history container e new div ta ke append child korbo
+history.append(newHistory)
  }
  else{
     alert('Invalid Pin')
